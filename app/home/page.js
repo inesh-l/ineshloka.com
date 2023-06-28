@@ -4,15 +4,21 @@ import { Navbar } from '../components/nav/navbar.js'
 export default function Home() {
   return (
     <main className="">
-      <Navbar />
+      <Navbar currentPage="Home" />
 
       <div className="flex flex-col items-center pt-48 pb-24">
         <h1 className="capitalize text-5xl font-black mb-4">Hi, I'm Inesh</h1>
         <p className="text-m">I'm a computer science student and software developer. Here's a bit about me!</p>
       </div>
 
+
       <div className="flex flex-col items-center p-24 text-7xl">
         &#8595;
+      </div>
+
+
+      <div className="flex flex-col items-center p-24">
+        <h2 className="text-3xl font-black mb-4">About Me</h2>
       </div>
         
 
@@ -53,8 +59,16 @@ export default function Home() {
           </div>
         </div>
       </div>
-      
-      
+
+
+      <div className="flex flex-col items-center p-24">
+        <h2 className="text-3xl font-black mb-4">Skills & Capabilities</h2>
+      </div>
+
+
+      <div className="flex flex-col items-center p-24">
+        <h2 className="text-3xl font-black mb-4">What I'm Looking For</h2>
+      </div>
     </main>
   )
 }
