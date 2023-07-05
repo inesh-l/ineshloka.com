@@ -19,7 +19,7 @@ export default function Home() {
 
 
       <div className="flex flex-col items-center p-24">
-        <h2 className="text-3xl font-black mb-4">Introduction</h2>
+        <h2 className="text-3xl font-black mb-4 text-center lg:text-left">Introduction</h2>
         <p className={"m-0 max-w-[80ch] text-md p-2"}>Hi! My name is Inesh Loka. I&#39;m a current B.S. Computer Science and Engineering student at The Ohio State University, 
         with specializations in both Artificial Intelligence and Software Development.</p>
         <p className={"m-0 max-w-[80ch] text-md p-2"}>My most recent position was a Software Development Internship at London Computer Systems in Cincinnati, 
@@ -30,7 +30,7 @@ export default function Home() {
         
 
       <div className="flex flex-col items-center p-24">
-        <h2 className="text-3xl font-black mb-4">Skills & Capabilities</h2>
+        <h2 className="text-3xl font-black mb-4 text-center lg:text-left">Skills & Capabilities</h2>
         <div className="mb-32 grid text-center lg:mb-0  lg:text-left">
           <div className="group rounded-lg border border-transparent px-5 py-4" >
             <h2 className={"mb-3 text-2xl font-semibold"}>
@@ -101,7 +101,7 @@ export default function Home() {
 
 
       <div className="flex flex-col items-center p-24">
-        <h2 className="text-3xl font-black mb-4">Career Interests</h2>
+        <h2 className="text-3xl font-black mb-4 text-center lg:text-left">Career Interests</h2>
         <div className="mb-32 grid text-center lg:mb-0 lg:grid-cols-2 lg:text-left">
           <div className="group rounded-lg border border-transparent px-5 py-4" >
             <h2 className={`mb-3 text-2xl font-semibold`}>
@@ -126,7 +126,7 @@ export default function Home() {
 
 
       <div className="flex flex-col items-center p-24">
-        <h2 className="text-3xl font-black mb-4">What I&#39;m Looking For</h2>
+        <h2 className="text-3xl font-black mb-4 text-center lg:text-left">What I&#39;m Looking For</h2>
         <p className={"m-0 max-w-[80ch] text-md p-2"}>I&#39;m actively seeking full-time summer internship positions in both software engineering and machine learning. I&#39;m also open to part-time remote positions during the fall and spring semesters
         while I&#39;m taking classes full time. </p>
         <p className={"m-0 max-w-[80ch] text-md p-2"}>You can find my contact information on the top right. I&#39;m best reached by email, at either my personal gmail (ineshrloka@gmail.com) or my school email (loka.4@osu.edu).</p>
