@@ -8,7 +8,7 @@ export function ContactCard(props) {
     return (
         <a href={link} target="_blank">
             <div className="flex flex-col items-center w-44 h-44 p-8">
-                <FontAwesomeIcon icon={icon} style={{color: "#ffffff",}} />
+                <FontAwesomeIcon icon={icon} style={{color: "#ffffff",}} size="lg" />
                 <h1 className="font-bold text-xl">{text}</h1>
             </div>
         </a>
