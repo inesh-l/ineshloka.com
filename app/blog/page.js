@@ -1,10 +1,9 @@
 import { Navbar } from '../components/nav/navbar.js'
 
-
 export default function Home() {
   return (
     <main className="">
-      <Navbar currentPage="Projects" />
+      <Navbar currentPage="Blog" />
 
       
       <div className="flex flex-col items-center p-24">
