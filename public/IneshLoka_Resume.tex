@@ -1,0 +1,164 @@
+\documentclass{article}
+\usepackage[cm]{fullpage}
+\usepackage{color}
+\usepackage{hyperref}
+\usepackage{arev} %% Use option "defaultsans" to use cantarell as sans serif only
+\usepackage[T1]{fontenc}
+\usepackage[margin=0.5in]{geometry}
+
+\hypersetup{breaklinks=true,%
+colorlinks=true,%
+linkcolor=cyan,%
+urlcolor=MyDarkBlue}
+
+\definecolor{MyDarkBlue}{rgb}{0,0.0,0.45}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Formatting parameters  %
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newlength{\tabin}
+\setlength{\tabin}{1em}
+\newlength{\secsep}
+\setlength{\secsep}{0.1cm}
+
+\setlength{\parindent}{0in}
+\setlength{\parskip}{0in}
+\setlength{\itemsep}{0in}
+\setlength{\topsep}{0in}
+\setlength{\tabcolsep}{0in}
+
+\definecolor{contactgray}{gray}{0.3}
+\pagestyle{empty}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  Template Definitions  %
+%%%%%%%%%%%%%%%%%%%%%%%%%%s
+
+\newcommand{\name}[1]{\begin{center}{\Large#1}\\\end{center}  \vspace{1pt}}
+\newcommand{\program}[1]{\begin{center}\textnormal{#1}\end{center} \vspace{2pt}} 
+\newcommand{\contact}[1]{\begin{center}\color{contactgray}{\small#1}\end{center} \vspace{2pt}}
+
+\newenvironment{tabbedsection}[1]{
+  \begin{list}{}{
+      \setlength{\itemsep}{0pt}
+      \setlength{\labelsep}{0pt}
+      \setlength{\labelwidth}{0pt}
+      \setlength{\leftmargin}{\tabin}
+      \setlength{\rightmargin}{\tabin}
+      \setlength{\listparindent}{0pt}
+      \setlength{\parsep}{0pt}
+      \setlength{\parskip}{0pt}
+      \setlength{\partopsep}{0pt}
+      \setlength{\topsep}{#1}
+    }
+  \item[]
+}{\end{list}}
+
+\newenvironment{nospacetabbing}{
+    \begin{tabbing}
+}{\end{tabbing}\vspace{-1.6pt}}
+
+\newenvironment{resume_header}{}{\vspace{2pt}}
+
+
+\newenvironment{resume_section}[1]{
+  \filbreak
+  \vspace{2\secsep}
+  {\color {MyDarkBlue}\textbf{\large #1}} \hrulefill
+  \begin{tabbedsection}{\secsep}
+}{\end{tabbedsection}}
+
+\newenvironment{resume_subsection}[2][]{
+  \textbf{#2} \hfill {\footnotesize #1} 
+  \begin{tabbedsection}{0.5\secsep}
+}{\end{tabbedsection}}
+
+\newenvironment{subitems}{
+  \renewcommand{\labelitemi}{-}
+  \begin{itemize}
+      \setlength{\labelsep}{1em}
+}{\end{itemize}}
+
+\newenvironment{resume_employer}[4]{
+  \vspace{\secsep}
+  \textbf{#1} \\ 
+  \indent {\small #2} \hfill {\footnotesize#3 (#4)}
+  \begin{tabbedsection}{0pt}
+  \begin{subitems}
+}{\end{subitems}\end{tabbedsection}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     Start Document     %
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\begin{resume_header}
+\name{Inesh Loka}
+\contact{ineshrloka@gmail.com \hspace{1.5cm} www.linkedin.com/in/inesh-l \hspace{1.5cm}www.ineshloka.com}
+\end{resume_header}
+
+\begin{resume_section}{Education}
+    \begin{resume_subsection}[Columbus, OH (2022--Present)]{The Ohio State University}
+      \begin{subitems}
+        \item B.S. With Honors, Computer Science and Engineering, Exp. December 2025
+        \item Cumulative GPA: 3.76
+      \end{subitems}
+    \end{resume_subsection}
+\end{resume_section}
+
+\begin{resume_section}{Leadership}
+  \begin{resume_employer}{OSU Artificial Intelligence Club}{Technology Committee Member}{}{September 2021 -- Present}
+    \item Led 50+ club members in weekly workshops teaching the fundamentals of deep learning with a project based approach.
+    \item Created a collection of resources to assist students with deep learning-based projects, including deployment guides using custom APIs and cloud services and implementations of models for various use 
+    cases in computer vision, natural language processing and audio signal processing.
+    \item Led redesign of the club website.
+  \end{resume_employer}
+\end{resume_section}
+
+\begin{resume_section}{Work Experience}
+  \begin{resume_employer}{London Computer Systems}{Software Development Intern, LCS RentManager Innovation}{Cincinnati, OH}{May 2023--August 2023}
+    \item Implemented 30+ major bug fixes and feature improvements on enterprise-level rental \newline accounting software with over 30,000 corporate clients. Skills used: C\#, .NET WPF, MySQL.
+    \item Overhauled financial reporting utilities with improvements in performance and design to facilitate migration to a web-based platform.
+    \item Engaged in Agile software development utilizing Gitlab CI, Jira and Confluence for continuous improvement and close cooperation with
+    team members and stakeholders.
+  \end{resume_employer}
+\end{resume_section}
+
+\begin{resume_section}{Projects}
+  \begin{resume_employer}{Stickerbomb}{Image segmentation artificial intelligence model and web application}{}{May 2023}
+    \item Implemented an image segmentation AI model based on UNet using PyTorch to extract subjects from images and generate digital stickers.
+    \item Designed a web application to allow users to upload images and generate stickers.
+    \item Wrote a blog post detailing the process of creating and deploying the model to AWS.
+  \end{resume_employer}
+
+  \begin{resume_employer}{2022 RevolutionUC Hackathon}{Educational stock market game}{}{February 2022}
+    \item Created an educational and interactive simulation game using data from the 2005-2007 stock market bubble with React to educate users on safe investing, located at ucstocks.github.io.
+    \item Won the Best Educational Hack award from Fifth Third Bank.
+  \end{resume_employer}
+
+  \begin{resume_employer}{Soundbite}{Lightweight audio capture and modification utility for Linux}{}{July 2023}
+    \item Built a low-level API for sound capture and manipulation in Rust using CPAL and Hound.
+    \item Designed a lightweight GUI using C++ and Qt to allow users to easily record and modify audio snippets.
+  \end{resume_employer}
+
+  \begin{resume_employer}{ineshloka.com}{Personal blog and portfolio}{}{July 2023}
+    \item Created an SEO-optimized site using NextJS to showcase projects and host blog posts.
+  \end{resume_employer}
+\end{resume_section}
+
+\begin{resume_section}{Qualifications}
+  \begin {nospacetabbing}
+      \hspace{2.5cm} \= \kill
+      \textbf{Languages} \>Python, C\#, JavaScript, Java, C, C++, x86 Assembly (AT\&T), Bash, SQL\\* 
+      \textbf{Data} \> Pytorch, SciKitLearn, Matplotlib, TensorFlow\\*
+      \textbf{Web} \> Django, Flask, React, NextJS, Angular, NodeJS\\*
+      \textbf{Desktop} \> Qt, Tauri, Make, .NET WPF, Java Swing\\*
+      \textbf{Other} \> Git, MongoDB, MySQL, AWS Lamba, EC2, SageMaker, Google Firebase, Vercel \\*
+      \textbf{Courses} \> Software Development \& Design, Low-Level Programming \& Computer Organization, \\
+      \> Discrete Structures, Data Structures \& Algorithms, Statistics, Linear Algebra, Calculus
+  \end {nospacetabbing}
+\end{resume_section}
+\end{document}
