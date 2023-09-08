@@ -35,17 +35,17 @@ urlcolor=MyDarkBlue}
 %  Template Definitions  %
 %%%%%%%%%%%%%%%%%%%%%%%%%%s
 
-\newcommand{\name}[1]{\begin{center}{\Large#1}\\\end{center}  \vspace{1pt}}
+\newcommand{\name}[1]{\begin{center}{\LARGE\textbf{#1}}\\\end{center}  \vspace{1pt}}
 \newcommand{\program}[1]{\begin{center}\textnormal{#1}\end{center} \vspace{2pt}} 
-\newcommand{\contact}[1]{\begin{center}\color{contactgray}{\small#1}\end{center} \vspace{2pt}}
+\newcommand{\contact}[1]{\begin{center}\color{contactgray}{\textnormal{#1}}\end{center} \vspace{2pt}}
 
 \newenvironment{tabbedsection}[1]{
   \begin{list}{}{
       \setlength{\itemsep}{0pt}
       \setlength{\labelsep}{0pt}
       \setlength{\labelwidth}{0pt}
-      \setlength{\leftmargin}{\tabin}
-      \setlength{\rightmargin}{\tabin}
+      \setlength{\leftmargin}{0pt}
+      \setlength{\rightmargin}{0pt}
       \setlength{\listparindent}{0pt}
       \setlength{\parsep}{0pt}
       \setlength{\parskip}{0pt}
@@ -64,13 +64,13 @@ urlcolor=MyDarkBlue}
 
 \newenvironment{resume_section}[1]{
   \filbreak
-  \vspace{2\secsep}
-  {\color {MyDarkBlue}\textbf{\large #1}} \hrulefill
+  \vspace{\secsep}
+  {\color {MyDarkBlue}\textbf {\underline{#1}}}
   \begin{tabbedsection}{\secsep}
 }{\end{tabbedsection}}
 
 \newenvironment{resume_subsection}[2][]{
-  \textbf{#2} \hfill {\footnotesize #1} 
+  \textbf{#2} \hfill {#1}{\parfillskip=0pt\par}
   \begin{tabbedsection}{0.5\secsep}
 }{\end{tabbedsection}}
 
@@ -83,7 +83,7 @@ urlcolor=MyDarkBlue}
 \newenvironment{resume_employer}[4]{
   \vspace{\secsep}
   \textbf{#1} \\ 
-  \indent {\small #2} \hfill {\footnotesize#3 (#4)}
+  \textnormal{#2} \hfill {#3 (#4)}{\parfillskip=0pt\par}
   \begin{tabbedsection}{0pt}
   \begin{subitems}
 }{\end{subitems}\end{tabbedsection}}
@@ -97,43 +97,36 @@ urlcolor=MyDarkBlue}
 
 \begin{resume_header}
 \name{Inesh Loka}
-\contact{ineshrloka@gmail.com \hspace{1.5cm} www.linkedin.com/in/inesh-l \hspace{1.5cm}www.ineshloka.com}
+\contact{ineshrloka@gmail.com \hspace{2cm} www.ineshloka.com \hspace{2cm}linkedin.com/in/inesh-l}
 \end{resume_header}
 
 \begin{resume_section}{Education}
-    \begin{resume_subsection}[Columbus, OH (2022--Present)]{The Ohio State University}
+    \begin{resume_subsection}[Columbus, OH]{The Ohio State University}
       \begin{subitems}
-        \item B.S. With Honors, Computer Science and Engineering, Exp. December 2025
+        \item B.S. With Honors, Computer Science and Engineering, Expected December 2025
         \item Cumulative GPA: 3.76
       \end{subitems}
     \end{resume_subsection}
 \end{resume_section}
 
 \begin{resume_section}{Work Experience}
-  \begin{resume_employer}{London Computer Systems}{Software Development Intern, LCS RentManager Innovation}{Cincinnati, OH}{May 2023--August 2023}
-    \item Implemented 30+ major bug fixes and feature improvements on enterprise-level rental \newline accounting software with over 30,000 corporate clients. Skills used: C\#, .NET WPF, MySQL.
-    \item Overhauled financial reporting utilities with improvements in performance and design to facilitate migration to a web-based platform.
-    \item Engaged in Agile software development utilizing Gitlab CI, Jira and Confluence for continuous improvement and close cooperation with
-    team members and stakeholders.
+  \begin{resume_employer}{London Computer Systems}{Software Development Intern}{Cincinnati, OH}{May 2023 -- August 2023}
+    \item Implemented major bug fixes and feature improvements on enterprise-level rental \newline accounting software with over 30,000 corporate clients using C\#, MySQL and AngularJS.
+    \item Overhauled financial reporting utilities with improvements in performance and design to facilitate \newline migration to a web-based platform.
+    \item Engaged in Agile software development utilizing Gitlab CI, Jira and Confluence for continuous application improvement and collaboration with business analysts and quality assurance engineers.
   \end{resume_employer}
 \end{resume_section}
 
 \begin{resume_section}{Leadership}
-  \begin{resume_employer}{OSU Artificial Intelligence Club}{Technology Committee Member}{}{September 2021 -- Present}
+  \begin{resume_employer}{OSU Artificial Intelligence Club}{Technology Committee Member}{}{September 2022 -- Present}
     \item Assisted 50+ club members in weekly workshops teaching the fundamentals of deep learning with a project based approach.
     \item Created a collection of resources to assist students with deep learning-based projects, including deployment guides using custom APIs and cloud services and implementations of models for various use 
     cases in computer vision, natural language processing and audio signal processing.
-    \item Led redesign of the club website.
+    \item Led redesign of the club website using static HTML and CSS to market the club to potential members.
   \end{resume_employer}
 \end{resume_section}
 
 \begin{resume_section}{Projects}
-  \begin{resume_employer}{Stickerbomb}{Image segmentation artificial intelligence model and web application}{}{May 2023}
-    \item Implemented an image segmentation AI model based on UNet using PyTorch to extract subjects from images and generate digital stickers.
-    \item Designed a web application to allow users to upload images and generate stickers.
-    \item Wrote a blog post detailing the process of creating and deploying the model to AWS.
-  \end{resume_employer}
-
   \begin{resume_employer}{Fast Containers}{Linux containers using CLI or GUI}{}{August 2023}
     \item Implemented a lightweight Linux containerization system in C using namespaces and cgroups.
     \item Designed a frontend in Rust using Tauri with effeciency in mind for developers looking to use containers as development environments.
@@ -141,19 +134,26 @@ urlcolor=MyDarkBlue}
 
   \begin{resume_employer}{Soundbite}{Lightweight audio capture and modification utility for Linux}{}{July 2023}
     \item Built a low-level API for sound capture and manipulation in Rust using CPAL and Hound.
-    \item Designed a lightweight GUI using C++ and Qt to allow users to easily record and modify audio snippets.
+    \item Designed a lightweight GUI using Tauri to allow users to record, play, and modify audio files.
   \end{resume_employer}
 
-  \begin{resume_employer}{ineshloka.com}{Personal blog and portfolio}{}{July 2023}
-    \item Created an SEO-optimized site using NextJS to showcase projects and host blog posts.
+  \begin{resume_employer}{Stickerbomb}{Image segmentation artificial intelligence model and web application}{}{May 2023}
+    \item Implemented an image segmentation AI model based on UNet using PyTorch to extract subjects from images and generate digital stickers.
+    \item Designed a web application to allow users to upload images and generate stickers.
+    \item Wrote a blog post detailing the process of creating and deploying the model to AWS.
+  \end{resume_employer}
+
+  \begin{resume_employer}{Maze Solver}{Computer vision based maze solver}{}{January 2023}
+    \item Implemented a maze solver using computer vision and pathfinding algorithms in Python.
+    \item Created a web server using Flask to allow users to upload images of mazes and receive solutions.
   \end{resume_employer}
 \end{resume_section}
 
 \begin{resume_section}{Qualifications}
   \begin {nospacetabbing}
       \hspace{2.5cm} \= \kill
-      \textbf{Languages} \>Python, C\#, JavaScript, Java, C, C++, x86 Assembly (AT\&T), Bash, SQL\\* 
-      \textbf{Data} \> Pytorch, SciKitLearn, Matplotlib, TensorFlow\\*
+      \textbf{Languages} \>C, Python, JavaScript, C\#, Java, C++, Rust, x86 Assembly (AT\&T), Bash, SQL\\* 
+      \textbf{Data} \> PyTorch, SciKitLearn, Matplotlib, TensorFlow\\*
       \textbf{Web} \> Django, Flask, React, NextJS, Angular, NodeJS\\*
       \textbf{Desktop} \> Qt, Tauri, Make, .NET WPF, Java Swing\\*
       \textbf{Other} \> Git, MongoDB, MySQL, AWS Lamba, EC2, SageMaker, Google Firebase, Vercel \\*
